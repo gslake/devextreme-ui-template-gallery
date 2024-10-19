@@ -134,7 +134,7 @@ export class AuthGuardService implements CanActivate {
       'change-password/:recoveryCode',
     ].includes(route.routeConfig?.path || defaultPath);
 
-    if (!isLoggedIn && isAuthForm) {
+    if (!isLoggedIn && !isAuthForm) {
       this.router.navigate(['/auth/login']);
     }
 
